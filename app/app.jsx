@@ -1,7 +1,8 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var { Route, Router, IndexRoute, hashHistory } = require('react-router');
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Route, Router, IndexRoute, hashHistory } from 'react-router'
 
+import TodoApp from 'TodoApp';
 
 // load foundation
 // require('style!css!foundation-sites/dist/foundation.min.css');
@@ -9,11 +10,11 @@ var { Route, Router, IndexRoute, hashHistory } = require('react-router');
 
 $(document).foundation();
 // App css
-require('style!css?sourceMap!sass?sourceMap!applicationStyle');
+import 'style!css?sourceMap!sass?sourceMap!applicationStyle'
 
 
 
 ReactDOM.render(
-  <p>Boilerplate 3 Project</p>,
+  <TodoApp />,
   document.getElementById('app')
 );
