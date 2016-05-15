@@ -14,6 +14,8 @@
 // console.log(final);
 
 // challenge 1
+
+
 var person = ['Andrew', 25];
 var personTwo = ['Jen', 29];
 
