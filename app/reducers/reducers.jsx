@@ -1,5 +1,5 @@
-import uuid from 'node-uuid';
-import moment from 'moment';
+import uuid from 'node-uuid'
+import moment from 'moment'
 
 export const searchTextReducer = (state = '', action) => {
   switch (action.type) {
@@ -44,10 +44,17 @@ export const todosReducer = (state = [], action) => {
             completedAt: nextCompleted ? moment().unix() : undefined
           }
         } else {
-          return todo;
+          return todo
         }
       })
+
+    case 'ADD_TODOS':
+      // console.log('Adding default todos', action.todos);
+      return [
+        ...state,
+        ...action.todos
+      ]
     default:
-      return state;
+      return state
   }
 }

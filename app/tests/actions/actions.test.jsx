@@ -9,8 +9,8 @@ describe('Actions', () => {
       searchText: 'Some search text'
     };
 
-    let res = actions.setSearchText(action.searchText);
-    expect(res).toEqual(action);
+    let res = actions.setSearchText(action.searchText)
+    expect(res).toEqual(action)
   });
 
   it('should generate add todo action', () => {
@@ -19,8 +19,27 @@ describe('Actions', () => {
       text: 'Thing to do'
     }
 
-    let res = actions.addTodo(action.text);
-    expect(res).toEqual(action);
+    let res = actions.addTodo(action.text)
+    expect(res).toEqual(action)
+  })
+
+  it('should generate ADD_TODOS action', () => {
+    const todos = {
+      id: '111',
+      text: 'anything',
+      completed: false,
+      completedAt: undefined,
+      createdAt: 33000
+    }
+
+    let action = {
+      type: 'ADD_TODOS',
+      todos
+    }
+
+    let res = actions.addTodos(todos)
+
+    expect(res).toEqual(action)
   })
 
   it('should generate toggle show completed action', () => {
@@ -28,8 +47,8 @@ describe('Actions', () => {
       type: 'TOGGLE_SHOW_COMPLETED'
     }
 
-    let res = actions.toggleShowCompleted();
-    expect(res).toEqual(action);
+    let res = actions.toggleShowCompleted()
+    expect(res).toEqual(action)
   })
 
   it('should generate a toggle todo action', () => {
@@ -38,7 +57,7 @@ describe('Actions', () => {
       id: 123
     }
 
-    const res = actions.toggleTodo(123);
-    expect(res).toEqual(action);
+    const res = actions.toggleTodo(123)
+    expect(res).toEqual(action)
   })
 });
