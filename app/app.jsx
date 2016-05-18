@@ -1,6 +1,7 @@
 // import { subscribe } from 'redux'
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import { Route, Router, IndexRoute, hashHistory } from 'react-router';
 
 import TodoApp from 'TodoApp';
@@ -29,6 +30,8 @@ import 'style!css?sourceMap!sass?sourceMap!applicationStyle'
 
 
 ReactDOM.render(
-  <TodoApp />,
+  <Provider store={store}>
+    <TodoApp />
+  </Provider>,
   document.getElementById('app')
 );
